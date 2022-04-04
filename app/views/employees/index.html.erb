@@ -1,0 +1,45 @@
+
+<h1 class="text-base font-medium text-center">Employees</h1>
+<p style="color: green" class="text-center"><%= notice %></p>
+
+<div>
+  <%= link_to "New employee", new_employee_path, class: "w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 my-4 bg-red-600 text-base font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:w-auto sm:text-sm" %>
+  <%= link_to "Back to dashboard", root_path, class: "w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 my-4 bg-indigo-600 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:w-auto sm:text-sm" %>
+
+  <table class="min-w-full divide-y divide-gray-200 border drop-shadow-xl">
+    <thead class="bg-gray-50">
+      <tr>
+        <th scope="col" class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
+          <%=t(".name")%>
+        </th>
+        <th scope="col" class="px-6 py-3 text-xs font-medium tracking-wider text-right text-gray-500 uppercase">
+          <%=t(".position")%>
+        </th>
+        <th scope="col" class="px-6 py-3 text-xs font-medium tracking-wider text-right text-gray-500 uppercase">
+          <%=t(".salary")%>
+        </th>
+        <th scope="col" class="px-6 py-3 text-xs font-medium tracking-wider text-center text-gray-500 uppercase">
+          <%=t(".actions")%>
+        </th>
+      </tr>
+    </thead>
+    <tbody class="bg-white divide-y divide-gray-200">
+      <% @employees.each do |employee| %>
+        <tr>
+          <td class="max-w-xs px-6 py-4 text-sm font-normal text-gray-900 whitespace-wrap">
+            <%= employee.name %>
+          </td>
+          <td class="max-w-xs px-6 py-4 text-sm font-normal text-right text-gray-500 whitespace-wrap">
+            <%= employee.position %>
+          </td>
+          <td class="max-w-xs px-6 py-4 text-sm font-normal text-right text-gray-500 whitespace-wrap">
+            <%= employee.salary %>
+          </td>
+          <td class="max-w-xs px-6 py-4 text-sm font-normal whitespace-wrap text-center text-creditario-600">
+            <%= link_to "Show this employee", employee, class: "button font-medium hover:underline" %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

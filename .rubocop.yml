@@ -1,0 +1,20 @@
+AllCops:
+  TargetRubyVersion: 3.0
+  NewCops: enable
+  Exclude:
+    - 'bin/**/*'
+    - 'db/**/*.rb'
+    - 'node_modules/**/*'
+    - 'vendor/**/*'
+    - 'log/**/*'
+
+Style/StringLiterals:
+  Enabled: true
+  EnforcedStyle: double_quotes
+
+Style/StringLiteralsInInterpolation:
+  Enabled: true
+  EnforcedStyle: double_quotes
+
+Style/Documentation:
+  Enabled: false

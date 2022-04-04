@@ -8,9 +8,26 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
 
   <body>
-    <%= yield %>
+    <main>
+      <div class="py-6 mx-auto max-w-7xl sm:px-6 lg:px-8">
+        <!-- Replace with your content -->
+        <div class="px-4 py-6 sm:px-0">
+            <%= yield %>
+        </div>
+        <!-- /End replace -->
+      </div>
+    </main>
+
+    <footer class=" bg-gray-500 absolute inset-x-0 bottom-0 h-52">
+      <div class="mx-auto max-w-7xl w-full px-4 py-16 sm:px-6 lg:px-8">
+        <div class="text-center p-6 font-medium text-white">
+          <span>All rights reserved</span>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

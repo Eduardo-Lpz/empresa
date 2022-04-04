@@ -1,0 +1,52 @@
+<div class="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+  <div class="max-w-md w-full space-y-8">
+    <div class="mx-auto h-14 w-auto">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-full w-full text-indigo-500" viewBox="0 0 20 20" fill="currentColor">
+        <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z" clip-rule="evenodd" />
+      </svg>
+    <div>
+
+    <div class="mt-5 md:mt-0 md:col-span-2">
+      <%= form_with(model: employee) do |form| %>
+        <% if employee.errors.any? %>
+          <div style="color: red">
+            <h2><%= pluralize(employee.errors.count, "error") %> prohibited this employee from being saved:</h2>
+
+            <ul>
+              <% employee.errors.each do |error| %>
+                <li><%= error.full_message %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+         <div class="drop-shadow-xl border overflow-hidden sm:rounded-md">
+          <div class="px-4 py-5 bg-white sm:p-6">
+            <div class="grid grid-cols-6 gap-6">
+
+              <div class="col-span-6">
+                <%= form.label :name, class: "block text-sm font-medium text-gray-700" %>
+                <%= form.text_field :name, class: "border mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md", maxlength: 60, placeholder: employee.name %>
+              </div>
+
+              <div class="col-span-6">
+                <%= form.label :position, class: "block text-sm font-medium text-gray-700" %>
+                <%= form.text_field :position, class: "border mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md", maxlength: 60, placeholder: employee.position %>
+              </div>
+
+              <div class="col-span-6">
+                <%= form.label :salary, class: "block text-sm font-medium text-gray-700" %>
+                <%= form.text_field :salary, class: "border mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md", maxlength: 60, placeholder: employee.salary %>
+              </div>
+
+            </div>
+          </div>
+          <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
+            <%= form.submit "Update", class: "inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" %>
+            <%= link_to "Back", employees_path, class: "inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
